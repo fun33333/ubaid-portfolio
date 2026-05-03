@@ -37,7 +37,7 @@ function StatItem({
     <div className="flex flex-col items-center justify-center gap-1.5 py-6 px-4 group">
       <div className="flex items-end gap-0.5 leading-none">
         <span className="text-4xl sm:text-5xl font-black text-white tracking-tighter">
-          {animate ? count : 0}
+          {count}
         </span>
         <span className="text-2xl sm:text-3xl font-black text-brand mb-0.5">
           {suffix}
@@ -58,12 +58,8 @@ export default function HeroSection() {
   const statsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) setAnimate(true); },
-      { threshold: 0.1 }
-    );
-    if (statsRef.current) observer.observe(statsRef.current);
-    return () => observer.disconnect();
+    const t = setTimeout(() => setAnimate(true), 300);
+    return () => clearTimeout(t);
   }, []);
 
   return (
