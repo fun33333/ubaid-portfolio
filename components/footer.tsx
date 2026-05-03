@@ -32,7 +32,7 @@ const Footer = () => {
 
             <div>
               <a
-                href="mailto:internfun3@gmail.com"
+                href="mailto:ubaid.quadgentics@gmail.com"
                 className="group inline-flex items-center gap-2 bg-brand hover:bg-brand/90 text-white px-8 py-4 rounded-full font-bold transition-all uppercase text-sm tracking-widest shadow-[0_0_20px_rgba(163,0,217,0.3)]"
               >
                 Get In Touch
@@ -65,9 +65,9 @@ const Footer = () => {
               <h4 className="font-bold text-sm uppercase mb-6 tracking-widest text-white">Contact</h4>
 
               <div className="space-y-4 mb-8">
-                <a href="mailto:internfun3@gmail.com" className="flex items-center gap-3 text-gray-400 hover:text-white transition group">
+                <a href="mailto:ubaid.quadgentics@gmail.com" className="flex items-center gap-3 text-gray-400 hover:text-white transition group">
                   <Mail className="w-5 h-5 text-brand" />
-                  <span className="text-base font-medium">internfun3@gmail.com</span>
+                  <span className="text-base font-medium">ubaid.quadgentics@gmail.com</span>
                 </a>
                 <a href="tel:+923122134810" className="flex items-center gap-3 text-gray-400 hover:text-white transition group">
                   <Phone className="w-5 h-5 text-brand" />

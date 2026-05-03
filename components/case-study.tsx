@@ -14,20 +14,28 @@ interface CaseStudyItem {
 
 const caseStudies: CaseStudyItem[] = [
   {
-    title: "Doughlicious",
-    subtitle: "D2C Food Brand",
+    title: "School Management System",
+    subtitle: "Live Product · 2 Clients · In Production",
     description:
-      "Scaled from zero to a high-conversion D2C brand over 4-5 months with precise strategy and real data.",
-    folder: "case-study",
-    pages: 5,
+      "Led from planning to MVP. Role-based dashboards for teachers, principals, and admins. Now sold as a commercial product serving real institutions.",
+    folder: "case-study/sms",
+    pages: 3,
   },
   {
-    title: "Doughlicious",
-    subtitle: "D2C Food Brand",
+    title: "Helpdesk Management System",
+    subtitle: "Enterprise Solution · MVP · 3 Role Dashboards",
     description:
-      "Scaled from zero to a high-conversion D2C brand over 4-5 months with precise strategy and real data.",
-    folder: "case-study",
-    pages: 5,
+      "Multi-role helpdesk with ticket threads, SLA tracking, file attachments, and per-role dashboards for requesters, moderators, and assignees.",
+    folder: "case-study/helpdesk",
+    pages: 3,
+  },
+  {
+    title: "AI Storytelling Agent System",
+    subtitle: "Hackathon Runner-Up · IBA × Google Developer Groups",
+    description:
+      "Multi-agent AI system where each agent plays a unique character. Generates a different story every run using LangChain orchestration and React UI.",
+    folder: "case-study/ai-agent",
+    pages: 3,
   },
 ];
 
@@ -107,7 +115,7 @@ export default function CaseStudy() {
               Case Studies
             </h2>
             <p className="text-gray-500 text-lg mt-4 leading-relaxed">
-              Real systems. Real clients. Built and shipped — not just designed.
+              Real systems. Real clients. Detailed breakdowns dropping soon.
             </p>
           </div>
 
@@ -145,20 +153,14 @@ export default function CaseStudy() {
             className="group relative rounded-3xl overflow-hidden border border-gray-200 hover:border-brand/40 transition-all duration-500 cursor-pointer shadow-sm hover:shadow-xl hover:shadow-brand/5 bg-white"
             onClick={() => openViewer(activeStudy, 1)}
           >
-            <div className="relative aspect-[16/9] w-full">
-              <Image
-                src={`/${study.folder}/page-1.png`}
-                alt={study.title}
-                fill
-                className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-brand/0 group-hover:bg-brand/10 transition-all duration-500 flex items-center justify-center">
-                <div className="bg-white/95 backdrop-blur-sm px-8 py-4 rounded-2xl flex items-center gap-3 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-lg">
-                  <Eye className="w-5 h-5 text-brand" />
-                  <span className="text-gray-900 font-bold text-sm uppercase tracking-wide">
-                    View Full Case Study
-                  </span>
+            <div className="relative aspect-[16/9] w-full bg-gray-50">
+              {/* Coming soon overlay */}
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-gray-50">
+                <div className="w-14 h-14 rounded-2xl bg-brand/10 flex items-center justify-center">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A300D9" strokeWidth="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 </div>
+                <span className="text-brand font-black text-sm uppercase tracking-widest">Case Study Coming Soon</span>
+                <span className="text-gray-400 text-xs">{study.subtitle}</span>
               </div>
             </div>
 

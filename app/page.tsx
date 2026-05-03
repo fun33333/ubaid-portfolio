@@ -161,7 +161,7 @@ export default function Portfolio() {
             Let&apos;s turn your idea into a production-ready system. Django. Next.js. AI agents. Real results.
           </p>
           <a
-            href="mailto:internfun3@gmail.com"
+            href="mailto:ubaid.quadgentics@gmail.com"
             className="inline-flex items-center gap-3 bg-brand hover:bg-brand/90 text-white px-10 py-5 rounded-full font-bold text-lg uppercase tracking-widest transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(163,0,217,0.4)]"
           >
             Let&apos;s Work Together
