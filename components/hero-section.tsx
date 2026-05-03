@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { Server, Package, Trophy, GraduationCap, Users } from "lucide-react";
 
 const stats = [
@@ -11,33 +11,17 @@ const stats = [
   { value: 50, suffix: "+", label: "Teachers Upskilled", icon: Users },
 ];
 
-function useCountUp(target: number, duration = 1200, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    let startTime: number | null = null;
-    const step = (ts: number) => {
-      if (!startTime) startTime = ts;
-      const p = Math.min((ts - startTime) / duration, 1);
-      setCount(Math.floor(p * target));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
 
 function StatItem({
-  value, suffix, label, icon: Icon, animate,
+  value, suffix, label, icon: Icon,
 }: {
-  value: number; suffix: string; label: string; icon: React.ElementType; animate: boolean;
+  value: number; suffix: string; label: string; icon: React.ElementType;
 }) {
-  const count = useCountUp(value, 1000, animate);
   return (
-    <div className="flex flex-col items-center justify-center gap-1.5 py-6 px-4 group">
+    <div className="flex flex-col items-center justify-center gap-1.5 py-6 px-4">
       <div className="flex items-end gap-0.5 leading-none">
         <span className="text-4xl sm:text-5xl font-black text-white tracking-tighter">
-          {count}
+          {value}
         </span>
         <span className="text-2xl sm:text-3xl font-black text-brand mb-0.5">
           {suffix}
@@ -54,13 +38,7 @@ function StatItem({
 }
 
 export default function HeroSection() {
-  const [animate, setAnimate] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const t = setTimeout(() => setAnimate(true), 300);
-    return () => clearTimeout(t);
-  }, []);
 
   return (
     <section
@@ -132,7 +110,7 @@ export default function HeroSection() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 divide-x divide-white/10">
             {stats.map((stat, i) => (
-              <StatItem key={i} {...stat} animate={animate} />
+              <StatItem key={i} {...stat} />
             ))}
           </div>
         </div>
