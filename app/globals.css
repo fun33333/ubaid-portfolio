@@ -387,3 +387,51 @@ html {
   0%, 100% { opacity: 0.2; transform: translateY(0); }
   50% { opacity: 1; transform: translateY(4px); }
 }
+
+@keyframes slide-in-right {
+  0% { transform: translateX(80px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bounce-in-right {
+  0% { transform: translateX(80px); opacity: 0; animation-timing-function: ease-in; }
+  40% { transform: translateX(-12px); opacity: 1; animation-timing-function: ease-out; }
+  65% { transform: translateX(6px); animation-timing-function: ease-in; }
+  82% { transform: translateX(-4px); animation-timing-function: ease-out; }
+  93% { transform: translateX(2px); animation-timing-function: ease-in; }
+  100% { transform: translateX(0); animation-timing-function: ease-out; }
+}
+
+.social-float-enter {
+  animation: bounce-in-right 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+/* Animista shake-horizontal — sequential social icons */
+@keyframes shake-social {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  8%  { transform: translateX(-6px) rotate(-4deg); }
+  16% { transform: translateX(6px) rotate(4deg); }
+  24% { transform: translateX(-5px) rotate(-3deg); }
+  32% { transform: translateX(5px) rotate(3deg); }
+  40% { transform: translateX(-3px) rotate(-2deg); }
+  48% { transform: translateX(3px) rotate(2deg); }
+  56% { transform: translateX(0) rotate(0deg); }
+}
+
+@keyframes shake-glow-seq {
+  0%, 20%, 100% {
+    transform: translateX(0) rotate(0deg);
+    box-shadow: none;
+  }
+  3% { transform: translateX(-7px) rotate(-5deg); box-shadow: 0 0 18px rgba(163,0,217,0.9); }
+  6% { transform: translateX(7px) rotate(5deg); box-shadow: 0 0 22px rgba(163,0,217,1); }
+  9% { transform: translateX(-6px) rotate(-4deg); box-shadow: 0 0 18px rgba(163,0,217,0.8); }
+  12% { transform: translateX(6px) rotate(4deg); box-shadow: 0 0 14px rgba(163,0,217,0.6); }
+  15% { transform: translateX(-3px) rotate(-2deg); box-shadow: 0 0 8px rgba(163,0,217,0.4); }
+  18% { transform: translateX(2px); box-shadow: 0 0 4px rgba(163,0,217,0.2); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}

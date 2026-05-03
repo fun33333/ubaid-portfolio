@@ -85,6 +85,7 @@ export default function About() {
                 solves a real problem — not one that looks good in a demo.&rdquo;
               </p>
             </div>
+
           </div>
         </div>
 

@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import Footer from "@/components/footer"
+import SocialFloat from "@/components/social-float"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -17,10 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="antialiased">
-      <body className="min-h-screen bg-background text-foreground font-roboto antialiased">
+      <body className="min-h-screen bg-background text-foreground font-roboto antialiased" suppressHydrationWarning>
         <Header />
         {children}
         <Footer />
+        <SocialFloat />
       </body>
     </html>
   )

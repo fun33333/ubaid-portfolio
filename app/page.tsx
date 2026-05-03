@@ -13,6 +13,7 @@ import About from "@/components/about";
 import { ToolsSection } from "@/components/tool-section";
 import CaseStudy from "@/components/case-study";
 import TeachingSection from "@/components/teaching-section";
+import TestimonialsSection from "@/components/testimonials-section";
 
 interface AnimatedCounter {
   years: number;
@@ -152,6 +153,9 @@ export default function Portfolio() {
 
       {/* Teaching */}
       <TeachingSection />
+
+      {/* Testimonials */}
+      <TestimonialsSection />
 
       {/* CTA Section */}
       <section className="py-24 md:py-32 bg-black relative overflow-hidden">
