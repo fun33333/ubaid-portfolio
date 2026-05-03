@@ -4,22 +4,25 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Ubaid delivered our school management system on time and beyond expectations. His ability to plan, lead, and build production-ready systems is rare at his level of experience.",
-    name: "Muhammad Asif",
-    role: "Principal, Al-Khair Institute",
-    initials: "MA",
+    headline: "His ability to simplify complex things is truly unmatched.",
+    quote: "Before Ubaid's classes, my academic and professional work felt like a burden. After learning AI techniques, prompt engineering, and NotebookLM from him, my entire way of working changed. The n8n session alone was a game changer.",
+    name: "Ajmal Khan",
+    role: "Student · Level Up Institute",
+    initials: "AK",
   },
   {
-    quote: "Working with Ubaid on our enterprise helpdesk was seamless. He understood the requirements deeply, structured the architecture well, and kept communication transparent throughout.",
-    name: "Ahmed Raza",
-    role: "Operations Manager",
-    initials: "AR",
+    headline: "Every class brought something new.",
+    quote: "Before joining, I had limited knowledge of this field. The teaching method was clear and supportive, which made the learning experience genuinely enjoyable — even when I couldn't attend regularly.",
+    name: "Safi",
+    role: "Student · Level Up Institute",
+    initials: "SF",
   },
   {
-    quote: "His AI agent system at the hackathon genuinely impressed the judges. The multi-agent orchestration was creative, technically solid, and actually worked flawlessly under demo pressure.",
-    name: "Sarah Khan",
-    role: "Tech Lead, Google Developer Groups",
-    initials: "SK",
+    headline: "I now feel confident building real websites.",
+    quote: "Before the course, I only had basic coding knowledge. After classes and practice, my skills improved significantly. Sir taught us to build portfolio websites using AI tools and prompts, use AI productivity tools, and present professionally.",
+    name: "Ayesha Shakoor",
+    role: "Student · Level Up Institute",
+    initials: "AS",
   },
 ];
 
@@ -52,7 +55,7 @@ function ShimmerCard() {
 }
 
 export default function TestimonialsSection() {
-  const isPlaceholder = true; // flip to false when real testimonials ready
+  const isPlaceholder = false; // flip to false when real testimonials ready
 
   return (
     <section className="pt-16 pb-20 md:pt-20 md:pb-28 bg-black relative overflow-hidden">
@@ -92,26 +95,41 @@ export default function TestimonialsSection() {
           </div>
         ) : (
           <div className="grid md:grid-cols-3 gap-5">
-            {testimonials.map(({ quote, name, role, initials }, i) => (
+            {testimonials.map(({ headline, quote, name, role, initials }, i) => (
               <div
                 key={i}
-                className="group relative p-7 rounded-2xl border border-brand/15 bg-[#1a0a1a]/70 hover:border-brand/50 hover:bg-[#220822] transition-all duration-400 overflow-hidden flex flex-col gap-5"
+                className="group relative pl-7 pr-7 pt-7 pb-6 rounded-2xl border border-white/8 bg-[#130813] hover:border-brand/30 hover:bg-[#1a0a1a] transition-all duration-400 overflow-hidden flex flex-col gap-4"
               >
-                <div className="absolute -top-8 -right-8 w-28 h-28 bg-brand/0 group-hover:bg-brand/15 rounded-full blur-2xl transition-all duration-500 pointer-events-none" />
+                {/* Left border accent */}
+                <div className="absolute left-0 top-6 bottom-6 w-[3px] rounded-full bg-gradient-to-b from-brand via-violet-500 to-brand/30" />
 
-                <Quote className="w-8 h-8 text-brand/40" />
+                {/* Hover glow */}
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand/0 group-hover:bg-brand/10 rounded-full blur-2xl transition-all duration-500 pointer-events-none" />
 
-                <p className="text-white/70 text-base leading-relaxed flex-1 italic">
-                  &ldquo;{quote}&rdquo;
+                {/* Quote icon */}
+                <Quote className="w-6 h-6 text-brand/50 shrink-0" />
+
+                {/* Headline */}
+                <h3 className="text-white text-xl font-black leading-snug tracking-tight">
+                  &ldquo;{headline}&rdquo;
+                </h3>
+
+                {/* Full quote */}
+                <p className="text-white/45 text-sm leading-relaxed flex-1">
+                  {quote}
                 </p>
 
-                <div className="flex items-center gap-3 pt-2 border-t border-white/5">
-                  <div className="w-10 h-10 rounded-full bg-brand/20 border border-brand/30 flex items-center justify-center text-brand font-black text-sm shrink-0">
+                {/* Author */}
+                <div className="flex items-center gap-3 pt-3 border-t border-white/5">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-black text-sm shrink-0"
+                    style={{ background: "linear-gradient(135deg, #7c3aed, #8b5cf6)" }}
+                  >
                     {initials}
                   </div>
                   <div>
-                    <p className="text-white font-bold text-sm">{name}</p>
-                    <p className="text-white/40 text-xs">{role}</p>
+                    <p className="text-white font-bold text-sm leading-tight">{name}</p>
+                    <p className="text-white/40 text-xs mt-0.5">{role}</p>
                   </div>
                 </div>
               </div>

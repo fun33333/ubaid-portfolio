@@ -79,6 +79,12 @@ export default function About() {
               I don&apos;t just write code. I plan, lead, build, and deliver.
             </p>
 
+            <div className="border-l-2 border-brand/60 pl-4 py-2 bg-brand/5 rounded-r-lg">
+              <p className="text-sm text-white/60 leading-relaxed">
+                Beyond development, I&apos;ve trained <span className="text-brand font-bold">200+ students</span> and <span className="text-brand font-bold">50+ teachers</span> in AI tools, prompt engineering, and web development — including under Sindh Government&apos;s <span className="text-white/80 font-semibold">BBSHRRDB initiative</span>.
+              </p>
+            </div>
+
             <div className="border-l-2 border-brand pl-5 py-1">
               <p className="text-base md:text-lg text-white/60 leading-relaxed italic">
                 &ldquo;The best system is one that runs in production, earns revenue, and
