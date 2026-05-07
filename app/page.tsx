@@ -97,10 +97,10 @@ export default function Portfolio() {
    
 
       {/* Case Study */}
-      <CaseStudy />
+      {/* <CaseStudy /> */}
 
       {/* Services */}
-      <section className="py-16 sm:py-24 md:py-32 lg:py-36 bg-black relative overflow-hidden">
+      <section id="services" className="py-16 sm:py-24 md:py-32 lg:py-36 bg-black relative overflow-hidden">
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -158,8 +158,8 @@ export default function Portfolio() {
       <TestimonialsSection />
 
       {/* CTA Section */}
-      <section className="py-24 md:py-32 bg-black relative overflow-hidden">
-        <div className="absolute inset-0 z-0" style={{ background: "radial-gradient(60% 60% at 50% 50%, #2b092b 0%, #000000 100%)" }} />
+      <section id="contact" className="py-24 md:py-32 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 z-0" style={{ background: "radial-gradient(60% 60% at 50% 50%, #2b092b 0%, #000000 60%)" }} />
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
           <span className="text-brand uppercase tracking-[0.25em] text-xs font-black block mb-4">Ready to Build?</span>
           <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-6">

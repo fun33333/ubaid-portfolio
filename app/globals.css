@@ -435,3 +435,8 @@ html {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(200%); }
 }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(163,0,217,0.5), 0 0 12px rgba(163,0,217,0.3); }
+  50% { box-shadow: 0 0 0 12px rgba(163,0,217,0), 0 0 28px rgba(163,0,217,0.15); }
+}

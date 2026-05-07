@@ -27,9 +27,10 @@ const credentials = [
 export default function TeachingSection() {
   return (
     <section
+      id="teaching"
       className="py-16 md:py-20 relative overflow-hidden"
       style={{
-        background: "#faf5ff",
+        background: "#F8F8F8",
         borderTop: "1px solid #d8b4fe",
         borderBottom: "1px solid #d8b4fe",
       }}

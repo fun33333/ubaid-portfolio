@@ -24,7 +24,7 @@ export default function About() {
   ];
 
   return (
-    <section className="py-20 md:py-22 relative overflow-hidden">
+    <section id="about" className="py-20 md:py-22 relative overflow-hidden">
       {/* Background: purple glow from TOP spreading through section */}
       <div
         className="absolute inset-0 z-0"

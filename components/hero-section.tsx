@@ -1,13 +1,14 @@
 "use client";
 
 import { useRef } from "react";
+import { FiArrowRight } from "react-icons/fi";
 import { Server, Package, Trophy, GraduationCap, Users } from "lucide-react";
 
 const stats = [
   { value: 3, suffix: "+", label: "Systems Shipped", icon: Server },
   { value: 2, suffix: "", label: "Products Sold", icon: Package },
   { value: 1, suffix: "", label: "Hackathon Won", icon: Trophy },
-  { value: 200, suffix: "+", label: "Students Trained", icon: GraduationCap },
+  { value: 250, suffix: "+", label: "Students Trained", icon: GraduationCap },
   { value: 50, suffix: "+", label: "Teachers Upskilled", icon: Users },
 ];
 
@@ -20,15 +21,15 @@ function StatItem({
   return (
     <div className="flex flex-col items-center justify-center gap-1.5 py-6 px-4">
       <div className="flex items-end gap-0.5 leading-none">
-        <span className="text-4xl sm:text-5xl font-black text-white tracking-tighter">
+        <span className="text-5xl sm:text-6xl font-black text-white tracking-tighter">
           {value}
         </span>
-        <span className="text-2xl sm:text-3xl font-black text-brand mb-0.5">
+        <span className="text-3xl sm:text-4xl font-black text-brand mb-0.5">
           {suffix}
         </span>
       </div>
       <div className="flex items-center gap-1.5">
-        <Icon className="w-3 h-3 text-brand/60 shrink-0" />
+        <Icon className="w-4 h-4 text-brand/80 shrink-0" />
         <span className="text-white/50 text-[10px] sm:text-xs uppercase tracking-[0.18em] font-bold">
           {label}
         </span>
@@ -40,12 +41,21 @@ function StatItem({
 export default function HeroSection() {
   const statsRef = useRef<HTMLDivElement>(null);
 
+  const glowStyle = `
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(163,0,217,0.5), 0 0 12px rgba(163,0,217,0.3); }
+      50% { box-shadow: 0 0 0 14px rgba(163,0,217,0), 0 0 32px rgba(163,0,217,0.2); }
+    }
+  `;
+
   return (
+    <>
+    <style>{glowStyle}</style>
     <section
       className="flex flex-col relative group overflow-hidden"
       style={{
         minHeight: "calc(100svh - 80px)",
-        background: "radial-gradient(125% 125% at 50% 10%, #000000 25%, #2b092b 80%, #3d0a3d 100%)"
+        background: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #2b092b 90%, #3d0a3d 100%)"
       }}
     >
       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-700" />
@@ -63,38 +73,46 @@ export default function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-[5.5vw] xl:text-[5rem] font-black uppercase tracking-tighter leading-[0.9]">
+          <h1 className="text-5xl md:text-6xl lg:text-[5.5vw] xl:text-[6rem] font-black uppercase tracking-tighter leading-[0.9] mx-auto">
             <span className="text-white whitespace-nowrap">WEB SYSTEMS. AI PRODUCTS.</span>
             <br />
-            <i><span className="text-[#A300D9] whitespace-nowrap">BUILT TO SHIP.</span></i>
+            <i><span className="text-[#A300D9]/80 whitespace-nowrap mx-auto">BUILT TO SHIP.</span></i>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/50 text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed">
             I build enterprise web systems and AI products for startups and organizations — from planning to production.
           </p>
 
           {/* CTA */}
           <div className="flex justify-center items-center pt-2">
             <button
-              className="px-10 py-4 rounded-full font-bold text-base uppercase tracking-widest hover:scale-105 hover:shadow-2xl hover:shadow-brand/20"
+              className="flex items-center gap-2 px-10 py-4 rounded-full font-bold text-base uppercase tracking-widest"
               style={{
-                background: "linear-gradient(to right, #A300D9 50%, rgba(255,255,255,0.92) 50%)",
+                background: "linear-gradient(to right, #A300D9 50%, rgba(255,255,255,0.95) 50%)",
                 backgroundSize: "200% 100%",
                 backgroundPosition: "right center",
                 color: "#A300D9",
-                transition: "background-position 0.4s ease, color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease",
+                animation: "pulse-glow 2s ease-in-out infinite",
+                transition: "background-position 0.4s ease, color 0.4s ease, transform 0.3s ease",
               }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLButtonElement).style.backgroundPosition = "left center";
-                (e.currentTarget as HTMLButtonElement).style.color = "white";
+                const btn = e.currentTarget as HTMLButtonElement;
+                btn.style.backgroundPosition = "left center";
+                btn.style.color = "#ffffff";
+                btn.style.transform = "scale(1.05)";
+                btn.style.animation = "none";
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLButtonElement).style.backgroundPosition = "right center";
-                (e.currentTarget as HTMLButtonElement).style.color = "#A300D9";
+                const btn = e.currentTarget as HTMLButtonElement;
+                btn.style.backgroundPosition = "right center";
+                btn.style.color = "#A300D9";
+                btn.style.transform = "scale(1)";
+                btn.style.animation = "pulse-glow 2s ease-in-out infinite";
               }}
             >
               Hire Me
+              <FiArrowRight className="w-4 h-4" />
             </button>
           </div>
 
@@ -104,8 +122,9 @@ export default function HeroSection() {
       {/* Stats row — bottom of hero */}
       <div
         ref={statsRef}
-        className="relative z-10 border-t border-white/10"
-        style={{ background: "linear-gradient(to bottom, transparent, rgba(0,0,0,0.4))" }}
+        className="relative z-10"
+        style={{ borderTop: "1px solid rgba(255,255,255,0.07)",
+           background: "linear-gradient(to bottom, transparent, rgba(0,0,0,0.4))" }}
       >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 divide-x divide-white/10">
@@ -116,5 +135,6 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }

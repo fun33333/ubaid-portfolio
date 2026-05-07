@@ -20,7 +20,13 @@ export function ToolsSlider({ images }: ToolsSliderProps) {
     )
 
     return (
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-2">
+        <div
+            className="relative overflow-hidden w-full max-w-7xl mx-auto px-4 md:px-2"
+            style={{
+                maskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+            }}
+        >
 
             <Carousel
                 plugins={[plugin]}

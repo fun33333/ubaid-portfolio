@@ -100,7 +100,7 @@ export default function CaseStudy() {
   };
 
   return (
-    <section className="py-18 md:py-22 bg-[#f8f7f4] relative overflow-hidden">
+    <section id="projects" className="py-18 md:py-22 bg-[#f8f7f4] relative overflow-hidden">
       {/* Subtle brand accent at top */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand/0 via-brand to-brand/0" />
 
